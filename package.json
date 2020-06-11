@@ -1,0 +1,24 @@
+{
+  "name": "back-office-kta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e scss -x  node-sass styles/scss -o styles/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hugoborini/back-office-kta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hugoborini/back-office-kta/issues"
+  },
+  "homepage": "https://github.com/hugoborini/back-office-kta#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4"
+  }
+}
