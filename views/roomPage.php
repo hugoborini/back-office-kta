@@ -1,5 +1,6 @@
 <?php
     $room = showARoom($room_id);
+    $Parsedown = new Parsedown();
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
 <body>
     <?php while($data_room = $room->fetch()){ ?>
     <p><?=$data_room['name']?></p>
-    <p><?=$data_room['description']?></p>
+    <?=$Parsedown->text($data_room['description']);?>
     <p><?=$data_room['path_img']?></p>
     <?php }?>
     

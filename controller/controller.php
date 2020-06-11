@@ -25,6 +25,6 @@ function showARoom($room_id){
 }
 function deleteARoom($room_id){
     $deleteARoom = deleteRoom($room_id);
-    header('Location: admin');
+    header('Location: /back-office-kta/admin');
     exit;
 }
