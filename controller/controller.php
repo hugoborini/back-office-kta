@@ -28,3 +28,9 @@ function deleteARoom($room_id){
     header('Location: /back-office-kta/admin');
     exit;
 }
+
+function PostARoom($name, $path_img, $description){
+    postRoom($name, $path_img, $description );
+    header ('Location: /back-office-kta/admin');
+    exit;
+}

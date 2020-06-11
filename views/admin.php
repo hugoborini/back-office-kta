@@ -23,6 +23,7 @@ $all_room = showAllRoom();
 
     <?php }?>
  </ul>
+ <a class="add-link"href="addRoom/">Ajouter une salle? <i class="far fa-plus-square"></i></a>
  </div>
 </body>
 </html>

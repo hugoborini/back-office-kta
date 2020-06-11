@@ -7,7 +7,9 @@ body{
 
 .list-container{
     display: flex;
-    justify-content: center;
+    //justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
@@ -77,4 +79,18 @@ header{
 
 .del {
     color: red ;
+}
+
+a{
+    text-shadow: 1px 1px 1px #FFF;
+    color: rgba(49,69,106,1);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.add-link{
+    margin-top: 20px;
+    font-weight: 700;
 }
