@@ -36,7 +36,7 @@ function PostARoom($name, $imagename, $description){
             $extension_upload = $infosfichier['extension'];
             $extension_autorisées = array('png');
             $newname = $_FILES['image']['name'];
-            
+
                 if(in_array($extension_upload , $extension_autorisées)) {
                 move_uploaded_file($_FILES['image']['tmp_name'], 'upload/' . $newname);
                 postRoom($name, $newname, $description );
