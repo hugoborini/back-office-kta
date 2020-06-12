@@ -60,6 +60,13 @@ $app->get('/admin/{room_id}', function (Request $request, Response $response, $r
     return $response;
 });
 
+$app->get('/admin/{room_id}/addPhoto', function (Request $request, Response $response, $room_id) {
+    $response->getBody();
+    echo 'oui'; 
+    include 'views/roomPage.php';
+    return $response;
+});
+
 $app->get('/delete/{room_id}', function (Request $request, Response $response, $room_id) {
     $response->getBody();
     deleteARoom($room_id);
@@ -75,7 +82,7 @@ $app->group('/addRoom', function(RouteCollectorProxy $group){
 
     $group->post('/postRoom' ,function(Request $request, Response $response){
         $response->getBody();
-        postARoom($_POST['name'], $_POST['descrip'], $_POST['path_image']);
+        postARoom($_POST['name'], $_FILES['image']['name'], $_POST['descrip']);
         return $response;
     });
 });

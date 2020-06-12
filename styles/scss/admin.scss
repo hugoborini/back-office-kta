@@ -30,7 +30,7 @@ header{
     border-radius: 20px;
     &__elem{
         list-style: none;
-        width: 50vw;
+        width: 60vw;
         text-shadow: 1px 1px 1px #FFF;
         color: rgba(49,69,106,1);
         display: flex;
@@ -38,7 +38,7 @@ header{
         padding: 15px 20px 15px 20px ;
         font-size: 18px;
         font-weight: 500;
-        flex-basis: 80%;
+        flex-basis: 50%;
         border-bottom: solid 1px lightgray;
         &:last-child{
             border-bottom: none;
@@ -47,7 +47,7 @@ header{
 
     div{
         display: flex;
-        flex-basis: 20%;
+        flex-basis: 50%;
         justify-content: space-between;
     }
     a{
@@ -79,6 +79,10 @@ header{
 
 .del {
     color: red ;
+}
+.add {
+    color: #65be20;
+    margin-left: 5px;
 }
 
 a{

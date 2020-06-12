@@ -13,7 +13,7 @@
 <body>
     <?php while($data_room = $room->fetch()){ ?>
     <p><?=$data_room['name']?></p>
-    <?=$Parsedown->text($data_room['description']);?>
+    <p><?=$Parsedown->text($data_room['description']);?></p>
     <p><?=$data_room['path_img']?></p>
     <?php }?>
     

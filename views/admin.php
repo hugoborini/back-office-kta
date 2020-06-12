@@ -13,17 +13,23 @@ $all_room = showAllRoom();
     <title>Catacombes | Admin</title>
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 </head>
-<body>
+<body> 
     <header>Catacombes</header>
     <div class="list-container">
     <ul class="list">
-    <?php while($data_room = $all_room->fetch()){ ?>
+        <?php while($data_room = $all_room->fetch()){ ?>
 
-    <li class="list__elem"><?=$data_room['name']?> <div><a href="delete/<?= $data_room['id_room']?>"><i class="fa fa-trash del"></i></a> <a href="admin/<?= $data_room['id_room']?>">Voir plus...</a></div></li>
+        <li class="list__elem"><?=$data_room['name']?>
+         <div>
+            <a href="delete/<?= $data_room['id_room']?>"><i class="fa fa-trash del"></i></a>
+            <a href="admin/<?= $data_room['id_room']?>/addPhoto">Ajouter une image <i class="fa fa-plus-square add"></i></a>
+            <a href="admin/<?= $data_room['id_room']?>">Voir plus...</a> 
+            </div>
+        </li>
 
-    <?php }?>
- </ul>
- <a class="add-link"href="addRoom/">Ajouter une salle? <i class="far fa-plus-square"></i></a>
+        <?php }?>
+    </ul>
+ <a class="add-link"href="addRoom/">Ajouter une salle ? <i class="fa fa-plus-square add"></i></a>
  </div>
 </body>
 </html>

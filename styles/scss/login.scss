@@ -42,7 +42,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
-    > input {
+    > input, textarea {
       width: 100%;
       height: 50px;
       padding: 1rem;
@@ -71,6 +71,9 @@ body {
           inset  1px  1px 2px $color-shadow,
           inset -1px -1px 2px $color-white;
       }
+    }
+    textarea {
+      height: auto;
     }
   }
   &__btn {
