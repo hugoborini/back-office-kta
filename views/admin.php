@@ -22,7 +22,7 @@ $all_room = showAllRoom();
         <li class="list__elem"><?=$data_room['name']?>
          <div>
             <a href="delete/<?= $data_room['id_room']?>"><i class="fa fa-trash del"></i></a>
-            <a href="admin/<?= $data_room['id_room']?>/addPhoto">Ajouter une image <i class="fa fa-plus-square add"></i></a>
+            <a href="admin/<?= $data_room['id_room']?>/<?=$data_room['name']?>/addPhoto">Ajouter une image <i class="fa fa-plus-square add"></i></a>
             <a href="admin/<?= $data_room['id_room']?>">Voir plus...</a> 
             </div>
         </li>

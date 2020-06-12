@@ -1,6 +1,6 @@
 <?php
 function dbConnect() {
-    try { $bdd = new PDO('mysql:host=localhost;dbname=catacombes;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    try { $bdd = new PDO('mysql:host=localhost;dbname=catacombes;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
     catch (Exception  $e) {
         $retour["sucess"] = false;
@@ -60,7 +60,7 @@ function deleteRoom($id_room){
 }
 function addPhoto($name, $id_room, $fact){
     $bdd = dbConnect();
-    $req = $bdd->prepare("INSERT INTO 'images'('name', 'id_room', 'fact') VALUES(:name, :id_room, :fact)");
+    $req = $bdd->prepare("INSERT INTO images(name, id_room, fact) VALUES (:name, :id_room, :fact)");
     $req->execute(array(
         'name' => $name,
         'id_room' => $id_room,

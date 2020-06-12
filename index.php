@@ -53,6 +53,20 @@ $app->get('/admin', function (Request $request, Response $response) {
     return $response;
 });
 
+
+$app->post('/admin/{room_id}/{room_name}/addPhoto/post', function (Request $request, Response $response, $room_id, $room_name){
+    $response->getBody();
+    upload($room_name, $room_id, $_POST["facts"]);
+    return $response;
+});
+
+$app->get('/admin/{room_id}/{room_name}/addPhoto', function (Request $request, Response $response, $room_id, $room_name) {
+    $response->getBody();
+    include 'views/addPhoto.php';
+    return $response;
+});
+
+
 $app->get('/admin/{room_id}', function (Request $request, Response $response, $room_id) {
     $response->getBody();
     showAroom($room_id);
@@ -60,12 +74,7 @@ $app->get('/admin/{room_id}', function (Request $request, Response $response, $r
     return $response;
 });
 
-$app->get('/admin/{room_id}/addPhoto', function (Request $request, Response $response, $room_id) {
-    $response->getBody();
-    echo 'oui'; 
-    include 'views/roomPage.php';
-    return $response;
-});
+
 
 $app->get('/delete/{room_id}', function (Request $request, Response $response, $room_id) {
     $response->getBody();

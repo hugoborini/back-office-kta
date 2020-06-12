@@ -9,6 +9,12 @@ body {
   font-family: 'Noto Sans TC', sans-serif;
   background-color: #EBECF0; }
 
+.photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center; }
+
 .form {
   position: relative;
   width: 400px;
