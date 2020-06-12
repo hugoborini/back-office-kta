@@ -77,3 +77,11 @@ a {
 .add-link {
   margin-top: 20px;
   font-weight: 700; }
+
+.error {
+  text-shadow: 1px 1px 1px #FFF;
+  color: #31456a;
+  background-color: lightcoral;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; }

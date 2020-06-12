@@ -36,6 +36,8 @@ $app->get('/', function (Request $request, Response $response) {
     return $response;
 });
 
+if(isset($_SESSION['user']) && isset($_SESSION['pass'])) {
+    if($_SESSION['user'] == 'admin' && $_SESSION['pass'] == 'pass'){
 $app->post('/checkAccount', function (Request $request, Response $response){
     $response->getBody();
     checkAccount($_POST['user'], $_POST['pass']);
@@ -44,12 +46,12 @@ $app->post('/checkAccount', function (Request $request, Response $response){
 
 $app->get('/admin', function (Request $request, Response $response) {
     $response->getBody();
-    if(isset($_SESSION['user']) && isset($_SESSION['pass'])) {
-        if($_SESSION['user'] == 'admin' && $_SESSION['pass'] == 'pass'){
+    // if(isset($_SESSION['user']) && isset($_SESSION['pass'])) {
+    //     if($_SESSION['user'] == 'admin' && $_SESSION['pass'] == 'pass'){
             include 'views/admin.php';
            showAllRoom();
-        }
-    }
+    //     }
+    // }
     return $response;
 });
 
@@ -95,6 +97,8 @@ $app->group('/addRoom', function(RouteCollectorProxy $group){
         return $response;
     });
 });
+    }
+}
 
 // Démarrage de l'application
 $app->run();

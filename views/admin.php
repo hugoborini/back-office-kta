@@ -1,7 +1,5 @@
 <?php
-
 $all_room = showAllRoom();
-
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +12,12 @@ $all_room = showAllRoom();
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
 </head>
 <body> 
+<?php if($_GET['error'] == 1){
+    echo '<div class="error">L\'upload de votre photo n\'a pas été pris en compte</div>';
+}
+?>
     <header>Catacombes</header>
+
     <div class="list-container">
     <ul class="list">
         <?php while($data_room = $all_room->fetch()){ ?>

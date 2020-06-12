@@ -30,27 +30,23 @@ function deleteARoom($room_id){
 }
 
 function PostARoom($name, $imagename, $description){
-    if(isset($_FILES['image']) AND $_FILES['photo']['error'] == 0 ){
+    if(isset($_FILES['image']) AND $_FILES['image']['error'] == 0 ){
         if($_FILES['image']['size'] <= 1000000){
             $infosfichier = pathinfo($_FILES['image']['name']);
             $extension_upload = $infosfichier['extension'];
             $extension_autorisées = array('png');
             $newname = $_FILES['image']['name'];
-
-
-    
-            if(in_array($extension_upload , $extension_autorisées)) {
+            
+                if(in_array($extension_upload , $extension_autorisées)) {
                 move_uploaded_file($_FILES['image']['tmp_name'], 'upload/' . $newname);
                 postRoom($name, $newname, $description );
                 header ('Location: /back-office-kta/admin');
                 exit;
             }
-            else {
-                echo 'non';
-            }
         } 
-    }else {
-        echo 'non de non';
+    } else {
+        header('Location: /back-office-kta/admin?error=1');
+        exit;
     }
 }
 
@@ -92,11 +88,10 @@ function upload($name, $id_room, $fact){
                 header ('Location: /back-office-kta/admin');
                 exit;
             }
-            else {
-                echo 'non';
-            }
         } 
-    }else {
-        echo 'non de non';
+    }
+    else {
+        header('Location: /back-office-kta/admin?error=1');
+        exit;
     }
 }
