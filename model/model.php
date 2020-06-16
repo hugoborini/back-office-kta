@@ -43,7 +43,7 @@ function getPicsAndFacts($id_room){
 
 function postRoom($name, $imagename, $description ){
     $bdd = dbConnect();
-    $req = $bdd->prepare('INSERT INTO `room`(`name`, `path_img`, `description`) VALUES (:name, :path_img, :description)');
+    $req = $bdd->prepare('INSERT INTO `room`(`name`, `path_img`, `description`, official) VALUES (:name, :path_img, :description, false)');
     $req->execute(array(
         'name' => $name,
         'path_img' => '/upload/'.$imagename,
