@@ -19,7 +19,7 @@
   "homepage": "https://github.com/hugoborini/back-office-kta#readme",
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^2.0.4"
   }
 }
